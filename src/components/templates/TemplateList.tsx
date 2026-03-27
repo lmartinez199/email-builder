@@ -48,6 +48,7 @@ export function TemplateList() {
           { label: 'Categorías', value: new Set(templates.map((t) => t.category)).size, icon: Tag, color: 'text-amber-400', bg: 'bg-amber-500/10' },
         ].map((stat) => (
           <StatCard key={stat.label} {...stat} loading={loading} />
+        ))}
       </div>
 
       {/* Toolbar */}

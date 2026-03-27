@@ -94,7 +94,7 @@ export function TemplateForm({ template }: TemplateFormProps) {
   return (
     <div className="flex flex-col h-screen bg-zinc-950">
       {/* Header */}
-      <header className="flex items-center gap-4 px-6 py-3 border-b border-zinc-800 bg-zinc-900 shrink-0">
+      <header className="flex items-center gap-4 px-6 py-3 border-b border-zinc-800/60 bg-zinc-900/80 shrink-0">
         <Button variant="ghost" size="icon" onClick={() => { void navigate('/'); }}>
           <ArrowLeft className="h-4 w-4" />
         </Button>

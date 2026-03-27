@@ -71,37 +71,37 @@ export function TemplateList() {
       </div>
 
       {/* Table */}
-      <div className="rounded-xl border border-zinc-800 overflow-hidden">
+      <div className="rounded-xl border border-zinc-800/60 overflow-hidden shadow-sm">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-zinc-800 bg-zinc-900/80">
+            <tr className="border-b border-zinc-800/60 bg-zinc-900">
               {['Nombre', 'Subject', 'Categoría', 'Variables', 'Estado', ''].map((h) => (
-                <th key={h} className="text-left px-5 py-3 text-xs font-medium text-zinc-500 uppercase tracking-wider">
+                <th key={h} className="text-left px-5 py-3 text-[11px] font-semibold text-zinc-500 uppercase tracking-widest">
                   {h}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-800/60">
+          <tbody className="divide-y divide-zinc-800/40 bg-zinc-900/30">
             {loading ? (
               Array.from({ length: 3 }).map((_, i) => (
                 <tr key={i}>
                   {Array.from({ length: 6 }).map((_, j) => (
                     <td key={j} className="px-5 py-4">
-                      <div className="h-3.5 bg-zinc-800 animate-pulse rounded-md" />
+                      <div className="h-3 bg-zinc-800/80 animate-pulse rounded-md" />
                     </td>
                   ))}
                 </tr>
               ))
             ) : filtered.length === 0 ? (
               <tr>
-                <td colSpan={6} className="px-5 py-12 text-center text-zinc-600 text-sm">
+                <td colSpan={6} className="px-5 py-14 text-center text-zinc-600 text-sm">
                   {search ? 'Sin resultados' : 'No hay templates — crea el primero'}
                 </td>
               </tr>
             ) : (
               filtered.map((t) => (
-                <tr key={t.id} className="bg-zinc-900/40 hover:bg-zinc-800/50 transition-colors group">
+                <tr key={t.id} className="hover:bg-zinc-800/40 transition-colors group">
                   <td className="px-5 py-3.5">
                     <span className="font-medium text-zinc-100">{t.name}</span>
                   </td>
